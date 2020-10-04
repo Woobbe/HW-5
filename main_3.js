@@ -1,6 +1,6 @@
 function init() {
 
-    let numberToCheck = -13;
+    let numberToCheck = 20;
 
     function checkNumber(number) {
 
@@ -22,7 +22,7 @@ function init() {
 
 
     function multipleNumber(number, multiple) {
-        return !(number % 10);
+        return !(number % multiple);
     };
 
 
