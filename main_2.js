@@ -39,7 +39,9 @@ function init() {
     let containsNotLetterNum = (pass) => {
         for (let symb of pass) {
             let unicodeSymb = symb.charCodeAt();
-            if ((unicodeSymb >= 48 && unicodeSymb <= 57) || (unicodeSymb >= 1040 && unicodeSymb <= 1103) || (unicodeSymb >= 65 && unicodeSymb <= 90 || unicodeSymb >= 97 && unicodeSymb <= 122)) {
+            let num = (unicodeSymb >= 48 && unicodeSymb <= 57);
+            let letter = (unicodeSymb >= 1040 && unicodeSymb <= 1103) || (unicodeSymb >= 65 && unicodeSymb <= 90 || unicodeSymb >= 97 && unicodeSymb <= 122);
+            if (num || letter) {
                 continue;
             } else {
                 return true;
