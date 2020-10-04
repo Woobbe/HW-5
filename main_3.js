@@ -10,6 +10,7 @@ function init() {
 
 
     function isSimpleNumber(number) {
+
         if (Math.sign(number) === -1) {
             return false;
         } else {
