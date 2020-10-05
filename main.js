@@ -27,11 +27,10 @@ function init() {
                 ten = 0;
             }
 
-            result += sum;
+            result = sum + result;
         }
         ;
 
-        result = result.split('').reverse().join('');
         return result;
     };
 
