@@ -1,7 +1,7 @@
 function init() {
 
-    const num1 = '123456789';
-    const num2 = '987654321456';
+    const num1 = '999';
+    const num2 = '99999';
 
 
     function sumString(num1, num2) {
@@ -30,6 +30,10 @@ function init() {
             result = sum + result;
         }
         ;
+
+        if (ten === 1) {
+        result = '1' + result;
+        }
 
         return result;
     };
