@@ -1,22 +1,33 @@
 function init() {
 
-    let numberToCheck = 5;
+    let numberToCheck = 997;
     let checkArray = [];
+    let simple;
+    let even;
+    let multipleTen;
 
     function checkNumber(number) {
+
         if (number === 2) {
-            checkArray.push(true, true, false);
+            simple = true;
+            even = true;
+            multipleTen = false;
+            checkArray.push(simple, even, multipleTen);
             console.log(checkArray);
             return;
-        };
+        }
 
-        if (isSimpleNumber(numberToCheck)) {
-            checkArray.push(true, false, false);
+        if (isSimpleNumber(number)) {
+            simple = true;
+            even = false;
+            multipleTen = false;
         } else {
-            checkArray.push(false);
+            simple = false;
             multipleTenNumber(number);
 
-        };
+        }
+
+        checkArray.push(simple, even, multipleTen);
         console.log(checkArray);
     }
 
@@ -29,26 +40,28 @@ function init() {
             for (let num = 2; num < number; num++) {
                 if (!(number % num)) return false;
             }
-        };
+        }
         return true;
     };
 
 
     function multipleTenNumber(number) {
         if (!(number % 10)) {
-            checkArray.push(true, true);
+            even = true;
+            multipleTen = true;
         } else {
             checkEvenNumber(number);
-            checkArray.push(false);
-        };
+            multipleTen = false;
+        }
     };
 
     function checkEvenNumber(number) {
         if (number & 1) {
-            checkArray.push(false);
+            even = false;
         } else {
-            checkArray.push(true);
-        };
+            even = true;
+        }
+
     };
     checkNumber(numberToCheck);
 };
