@@ -1,21 +1,12 @@
 function init() {
 
-    let numberToCheck = 997;
+    let numberToCheck = 2;
     let checkArray = [];
     let simple;
     let even;
     let multipleTen;
 
     function checkNumber(number) {
-
-        if (number === 2) {
-            simple = true;
-            even = true;
-            multipleTen = false;
-            checkArray.push(simple, even, multipleTen);
-            console.log(checkArray);
-            return;
-        }
 
         if (isSimpleNumber(number)) {
             simple = true;
@@ -56,7 +47,7 @@ function init() {
     };
 
     function checkEvenNumber(number) {
-        if (number & 1) {
+        if (number & 1 || number === 2) {
             even = false;
         } else {
             even = true;
